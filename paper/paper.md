@@ -138,3 +138,32 @@ package GitHub repository for workflows that you believe should be easily
 accessible. Try and avoid creating strongly personal workflows. Hold priority
 for workflows that are repeatedly used across different user cases.
 
+### Create a script
+
+An _R_ package that has executables should include them in its `exec/scripts/`
+directory. The maintainer of a package should then call
+`BiocExecute::compileExecs()` to create the file `packageName.R` in the `exec/`
+directory.
+
+For instance, the name of my package is `mypkg`. In its root directory, I don't
+have an `exec` directory:
+
+```{r tree, eval = FALSE}
+mypkg
+│   README.md
+│   DESCRIPTION    
+│   NEWS.md
+│   NAMESPACE    
+│
+└───R
+│   │   functionA.R
+│   │   functionB.R
+│   
+└───tests
+│   │   testA.R
+│   │   testB.R
+│   
+└───vignettes
+    │   myVignette.Rmd
+```
+
