@@ -22,10 +22,17 @@ authors:
     role: Author
 affiliations:
   - name: First Affiliation
-    index: 1
-  - name: ELIXIR Europe
-    ror: 044rwnt51
+  ror: xx
+  index: 1
+  - name: Second affiliation
+    ror: xx
     index: 2
+  - name: Third affiliation
+    ror: xx
+    index: 3
+  - name: "IFB-core, French Institute of Bioinformatics (IFB), CNRS, INSERM, INRAE, CEA, 94800 Villejuif, France"
+    ror: 045f7pv37
+    index: 4
 date: 8 November 2023
 cito-bibliography: paper.bib
 event: BH23EU
