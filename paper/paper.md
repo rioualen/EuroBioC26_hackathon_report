@@ -22,8 +22,8 @@ authors:
     role: Author
 affiliations:
   - name: First Affiliation
-  ror: xx
-  index: 1
+    ror: xx
+    index: 1
   - name: Second affiliation
     ror: xx
     index: 2
