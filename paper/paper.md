@@ -1,36 +1,42 @@
 ---
-title: 'BioHackEU23 report: Template for the very long title'
-title_short: 'BioHackEU23 #26: unknown chemical substances'
+title: 'BiocExecute: Make package functions or workflows executable in the command line'
+title_short: 'BiocExecute'
 tags:
-  - cheminformatics
-  - PubChem
-  - unknown chemical substances
+  - Bioconductor
+  - xx
 authors:
-  - name: First Author
+  - name: Guillaume Deflandre
     affiliation: 1
-    role: Writing – original draft
-  - name: Last Author
-    orcid: 0000-0000-0000-0000
-    affiliation: 2
-    role: Conceptualization, Writing – review & editing
+    role: Author, creator
+  - name: Claire Rioualen
+    orcid: https://orcid.org/0000-0002-7684-8679
+    affiliation: 4
+    role: Author
 affiliations:
   - name: First Affiliation
+    ror: xx
     index: 1
-  - name: ELIXIR Europe
-    ror: 044rwnt51
+  - name: Second affiliation
+    ror: xx
     index: 2
-date: 8 November 2023
+  - name: Third affiliation
+    ror: xx
+    index: 3
+  - name: "IFB-core, French Institute of Bioinformatics (IFB), CNRS, INSERM, INRAE, CEA, 94800 Villejuif, France"
+    ror: 045f7pv37
+    index: 4
+date: '`r Sys.Date()`'
 cito-bibliography: paper.bib
-event: BH23EU
-biohackathon_name: "BioHackathon Europe 2023"
-biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
-group: Project 26
+event: EuroBioC26
+biohackathon_name: "EuroBioC26 Hackathon"
+biohackathon_url:   "https://eurobioc2026.bioconductor.org/"
+biohackathon_location: "Turku, Finland, 2026"
+group: Project 2
 # URL to project git repo --- should contain the actual paper.md:
-git_url: https://github.com/biohackrxiv/publication-template
+git_url: https://github.com/BiocCodingCollaborations/BiocExecute
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
-authors_short: First Author \emph{et al.}
+authors_short: Deflandre \emph{et al.}
 ---
 
 
