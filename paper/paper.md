@@ -153,15 +153,15 @@ mypkg
 &#124   NEWS.md
 &#124   NAMESPACE    
 &#124
-\└\─\─\─R
+&#9492\─\─\─R
 &#124   &#124   functionA.R
 &#124   &#124   functionB.R
 &#124   
-\└\─\─\─tests
+&#9492\─\─\─tests
 &#124   &#124   testA.R
 &#124   &#124   testB.R
 &#124   
-\└\─\─\─vignettes
+&#9492\─\─\─vignettes
     &#124   myVignette.Rmd
 ```
 
