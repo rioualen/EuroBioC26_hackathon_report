@@ -146,23 +146,22 @@ directory.
 For instance, the name of my package is `mypkg`. In its root directory, I don't
 have an `exec` directory:
 
-```bash
-mypkg
-│   README.md
-│   DESCRIPTION    
-│   NEWS.md
-│   NAMESPACE    
-│
-└───R
-│   │   functionA.R
-│   │   functionB.R
-│   
-└───tests
-│   │   testA.R
-│   │   testB.R
-│   
-└───vignettes
-    │   myVignette.Rmd
+```r
+0xE2   README.md
+  &#124   DESCRIPTION    
+  &#124   NEWS.md
+  &#124   NAMESPACE    
+  &#124
+  &#9492&#9472&#9472&#9472R
+  &#124   &#124   functionA.R
+  &#124   &#124   functionB.R
+  &#124   
+  &#9492&#9472&#9472&#9472tests
+  &#124   &#124   testA.R
+  &#124   &#124   testB.R
+  &#124   
+  &#9492&#9472&#9472&#9472vignettes
+  &#124   myVignette.Rmd
 ```
 
 
