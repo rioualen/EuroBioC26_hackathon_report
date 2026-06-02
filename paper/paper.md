@@ -7,10 +7,17 @@ tags:
 authors:
   - name: Guillaume Deflandre
     affiliation: 1
+    role: Author, creator
+  - name: Claire Rioualen
+    orcid: https://orcid.org/0000-0002-7684-8679
+    affiliation: 2
+    role: Author
 affiliations:
   - name: First Affiliation
     index: 1
-date: 'June 2nd 2026'
+  - name: Second affiliation
+    index: 2
+date: 'xx'
 cito-bibliography: paper.bib
 event: EuroBioC26
 biohackathon_name: "EuroBioC26 Hackathon"
