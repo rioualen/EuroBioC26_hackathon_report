@@ -96,7 +96,7 @@ Light weight, relies on existing packages
 `BiocExecute` is a package to make Bioconductor/R package functions executable
 in the Command Line Interface (CLI) (Figure 1.)
 
-![Hex sticker for the BiocExecute package.](images/hex_sticker.png)
+![Hex sticker for the BiocExecute package.](figures/hex_sticker.png)
 
 The package comes with a few functions that need to be called upon building a
 package or upon using the package in the CLI. 
