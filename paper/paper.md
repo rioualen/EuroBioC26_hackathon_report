@@ -3,6 +3,9 @@ title: 'BiocExecute: Make package functions or workflows executable in the comma
 title_short: 'BiocExecute'
 tags:
   - Bioconductor
+  - bioinformatics
+  - R
+  - Rapp
 authors:
   - name: Guillaume Deflandre
     orcid: 0009-0008-1257-2416
@@ -32,13 +35,12 @@ affiliations:
     index: 3
 date: '`r Sys.Date()`'
 cito-bibliography: paper.bib
-event: EuroBioC26
-biohackathon_name: "EuroBioC26 Hackathon"
-biohackathon_url:   "https://eurobioc2026.bioconductor.org/"
-biohackathon_location: "Turku, Finland, 2026"
-group: Project 2
+event: Eurobioc 2026
+biohackathon_name: "Eurobioc 2026"
+biohackathon_url: "https://bioconductor.org/developers/bioccommits/"
+biohackathon_location: "Turku, Finland 2026"
 # URL to project git repo --- should contain the actual paper.md:
-git_url: https://github.com/BiocCodingCollaborations/BiocExecute
+git_url: https://github.com/rioualen/EuroBioC26_hackathon_report
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
 authors_short: Deflandre \emph{et al.}
