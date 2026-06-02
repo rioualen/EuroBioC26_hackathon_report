@@ -13,7 +13,7 @@ authors:
     role: Author, creator
   - name: Leopold Guyot 
     orcid: 0009-0005-2217-3855
-    affiliation: 2
+    affiliation: 1
     role: Author
   - name: Rasmus Hindstrom 
     orcid: 0009-0004-5731-178X
