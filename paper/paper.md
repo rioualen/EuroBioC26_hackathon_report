@@ -148,21 +148,21 @@ have an `exec` directory:
 
 ```r
 mypkg
-\│   README.md
-\│   DESCRIPTION    
-\│   NEWS.md
-\│   NAMESPACE    
-\│
+&#124   README.md
+&#124   DESCRIPTION    
+&#124   NEWS.md
+&#124   NAMESPACE    
+&#124
 \└\─\─\─R
-\│   \│   functionA.R
-\│   \│   functionB.R
-\│   
+&#124   &#124   functionA.R
+&#124   &#124   functionB.R
+&#124   
 \└\─\─\─tests
-\│   \│   testA.R
-\│   \│   testB.R
-\│   
+&#124   &#124   testA.R
+&#124   &#124   testB.R
+&#124   
 \└\─\─\─vignettes
-    \│   myVignette.Rmd
+    &#124   myVignette.Rmd
 ```
 
 
