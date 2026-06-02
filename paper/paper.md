@@ -44,13 +44,25 @@ group: Project 2
 git_url: https://github.com/BiocCodingCollaborations/BiocExecute
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
-authors_short: First Author \emph{et al.}
+authors_short: Deflandre \emph{et al.}
 ---
-
 
 # Introduction
 
-As part of the BioHackathon Europe 2023, we here report...
+## Commandline executables for bioconductor functions and scripts
+
+This project was originally envisioned as a package or function for converting package maintainer or user supplied scripts into commandline executables. The R and Bioconductor paradigms of interactivity through a responsive and informative REPL have been a formula for success for academic users for a long time. But as computational biology becomes increasingly interdisciplinary and increasingly relies on high performance compute, high throughput compute and experimentation, and cloud compute, formalizing portable and flexible implementations of R and Bioconductor tooling is an imperative to ensure that that work, and Bioconductor itself maintain relevancy.
+
+There already exist at least two tools that do ‘app’ style script conversion; R2G2 - Galaxy specifc integration and Rapp - commandline executables. So developing a package for this project may not be necessary. Long term, the goal of this project is to lay the groundwork for programmatic generation of tooling within Bioconductor packages that can be slotted into modern workflow management systems, or other interactive platforms like Galaxy.
+
+Key Considerations:
+
+Where is the right place for ‘app-ification’ of a script to take place? Should it happen upon package installation?
+Overhead checking of things like package versions or argument types are mostly cheap, how much of those checks should we enforce?
+What do graceful failures for these scripts look like?
+
+
+
 
 ## Meeting information
 
