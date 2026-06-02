@@ -33,15 +33,15 @@ affiliations:
   - name: "IFB-core, French Institute of Bioinformatics (IFB), CNRS, INSERM, INRAE, CEA, 94800 Villejuif, France"
     ror: 045f7pv37
     index: 4
-date: 8 November 2023
+date: '`r Sys.Date()`'
 cito-bibliography: paper.bib
-event: BH23EU
-biohackathon_name: "BioHackathon Europe 2023"
-biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
-group: Project 26
+event: EuroBioC26
+biohackathon_name: "EuroBioC26 Hackathon"
+biohackathon_url:   "https://eurobioc2026.bioconductor.org/"
+biohackathon_location: "Turku, Finland, 2026"
+group: Project 2
 # URL to project git repo --- should contain the actual paper.md:
-git_url: https://github.com/biohackrxiv/publication-template
+git_url: https://github.com/BiocCodingCollaborations/BiocExecute
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
 authors_short: First Author \emph{et al.}
