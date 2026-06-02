@@ -12,6 +12,14 @@ authors:
     orcid: 0000-0000-0000-0000
     affiliation: 2
     role: Author
+  - name: Rasmus Hindstrom 
+    orcid: 0000-0000-0000-0000
+    affiliation: 3
+    role: Author
+  - name: Claire Rioualen
+    orcid: 0000-0002-7684-8679
+    affiliation: 4
+    role: Author
 affiliations:
   - name: First Affiliation
     index: 1
