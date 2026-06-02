@@ -14,25 +14,22 @@ authors:
     role: Author
   - name: Rasmus Hindstrom 
     orcid: 0009-0004-5731-178X
-    affiliation: 3
+    affiliation: 2
     role: Author
   - name: Claire Rioualen
     orcid: 0000-0002-7684-8679
-    affiliation: 4
+    affiliation: 3
     role: Author
 affiliations:
-  - name: First Affiliation
-    ror: xx
+  - name: "Computational Biology and Bioinformatics, de Duve Institute, UCLouvain"
+    ror: 02495e989
     index: 1
   - name: Second affiliation
     ror: xx
     index: 2
-  - name: Third affiliation
-    ror: xx
-    index: 3
   - name: "IFB-core, French Institute of Bioinformatics (IFB), CNRS, INSERM, INRAE, CEA, 94800 Villejuif, France"
     ror: 045f7pv37
-    index: 4
+    index: 3
 date: '`r Sys.Date()`'
 cito-bibliography: paper.bib
 event: EuroBioC26
