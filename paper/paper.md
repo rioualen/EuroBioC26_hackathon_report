@@ -61,203 +61,215 @@ Where is the right place for ‘app-ification’ of a script to take place? Shou
 Overhead checking of things like package versions or argument types are mostly cheap, how much of those checks should we enforce?
 What do graceful failures for these scripts look like?
 
+## Motivation
 
+Bioconductor has a collection of more than 2,400 open source software packages
+downloaded millions of times per year. They are thoroughly maintained and
+documented, and their quality is ensured through the use of BiocCheck.
 
+This package aims to further improve Bioconductor software FAIRness, by making
+them usable in the command line.
 
-## Meeting information
+* Findability: xxx;
 
-If you want to submit a preprint to BioHackrXiv, first check if your meeting is registered. You can find a list
-of meetings [here](https://index.biohackrxiv.org/meetings). If your meeting is missing, please contact your meeting
-organizers. The above list also provides information on the YAML fields with information about the meeting.
+* Accessibility: allows more users to use Bioconductor packages, in a wider
+variety of setups;
 
-The following fields need to be given:
+* Interoperability: packages can be combined as modules with other command line
+tools;
 
-```YAML
-biohackathon_name: "BioHackathon Europe 2023"
-biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
-group: Project 26
-git_url: https://github.com/yourOrganization/your_report_repo
-```
+* Reusability: modular components can be reused in future workflows with any
+workflow manager.
 
-The [BioHackrXiv meeting pages](https://index.biohackrxiv.org/meetings) provide content to use for the first
-three fields. The `git_url:` field must have the link to the GitHub repository with your preprint (draft).
+Package users and developers can both benefit from this setup: users can use
+Bioconductor tools out side of R scripts and integrate them in their own
+workflows, and package developers can benefit from a wider range of users.
+Overall, Bioconductor software can gain visibility among a larger community of
+bioinformaticiens.
 
-## Author information
-
-Information about the authors is given in the [YAML](https://en.wikipedia.org/wiki/YAML) format at the top of this template.
-For authors you provide their names, their affiliations. That is the minimum, but as BioHackrXiv is moving to a situation
-where more metadata is shared, and used by, for example, EuropePMC, adding additional information ie encouraged.
-
-BioHackathons is about hacking together, and the minimal number of authors for reports is two. This makes a minimal example
-look like this:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-  - name: Last Author
-    affiliation: 2
-affiliations:
-  - name: First Affiliation
-    index: 1
-  - name: ELIXIR Europe
-    index: 2
-```
-
-### Author identifiers
-
-Ideally, authors provide their [ORCID](https://orcid.org/) identifier. For affiliations, It is added with the `orcid:` field.
-So, and author record would look like this:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    orcid: 0000-0000-0000-0000
-```
-
-### Research Organization Registry identifiers
-
-Matching the author identifier, the affiliations can be further specified with the
-[Research Organization Registry](https://ror.org/) (ROR) identifier.
-For example, this is the affiliation identifier can be added with the `ror:` field:
-
-```yaml
-affiliations:
-  - name: ELIXIR Europe
-    ror: 044rwnt51
-    index: 2
-```
-
-### Contributor Role Taxonomy
-
-A last feature since is minimal support for the Contributor Role Taxonomy (CRediT). You
-can specify the role of authors in writing the report with the `role:` field. However,
-the authors are responsible for selection the right terms from [CRediT](https://credit.niso.org/).
-An example looks like this:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    orcid: 0000-0000-0000-0000
-    role: Conceptualization, Writing – review & editing
-```
-
-### A full examples
-
-A full example then has this structure:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    role: Writing – original draft
-  - name: Last Author
-    orcid: 0000-0000-0000-0000
-    affiliation: 2
-    role: Conceptualization, Writing – review & editing
-affiliations:
-  - name: First Affiliation
-    index: 1
-  - name: ELIXIR Europe
-    ror: 044rwnt51
-    index: 2
-```
-
-# Formatting
-
-This document use Markdown and you can look at [this tutorial](https://www.markdowntutorial.com/).
-
-## Subsection level 2
-
-Please keep sections to a maximum of only two levels.
-
-## Tables
-
-Tables can be added in the following way, though alternatives are possible:
-
-```markdown
-Table: Note that table caption is automatically numbered and should be
-given before the table itself.
-
-| Header 1 | Header 2 |
-| -------- | -------- |
-| item 1 | item 2 |
-| item 3 | item 4 |
-```
-
-This gives:
-
-Table: Note that table caption is automatically numbered and should be
-given before the table itself.
-
-| Header 1 | Header 2 |
-| -------- | -------- |
-| item 1 | item 2 |
-| item 3 | item 4 |
-
-## Figures
-
-A figure is added with:
-
-```markdown
-![Caption for BioHackrXiv logo figure](./biohackrxiv.png)
-```
-
-This gives:
-
-![Caption for BioHackrXiv logo figure](./biohackrxiv.png)
-
-Figures can be scaled by adding the width or height to the Markdown like this:
-
-```markdown
-![Caption for BioHackrXiv logo figure](./biohackrxiv.png){ width=50px }
-```
-
-# Other main section on your manuscript level 1
-
-Lists can be added with:
-
-1. Item 1
-2. Item 2
-
-# Citation Typing Ontology annotation
-
-You can use [CiTO](http://purl.org/spar/cito/2018-02-12) annotations, as explained in [this BioHackathon Europe 2021 write up](https://raw.githubusercontent.com/biohackrxiv/bhxiv-metadata/main/doc/elixir_biohackathon2021/paper.md) and [this CiTO Pilot](https://www.biomedcentral.com/collections/cito).
-Using this template, you can cite an article and indicate _why_ you cite that article, for instance DisGeNET-RDF [@citesAsAuthority:Queralt2016].
-
-The syntax in Markdown is as follows: a single intention annotation looks like
-`[@usesMethodIn:Krewinkel2017]`; two or more intentions are separated
-with colons, like `[@extends:discusses:Nielsen2017Scholia]`. When you cite two
-different articles, you use this syntax: `[@citesAsDataSource:Ammar2022ETL; @citesAsDataSource:Arend2022BioHackEU22]`.
-
-Possible CiTO typing annotation include:
-
-* citesAsDataSource: when you point the reader to a source of data which may explain a claim
-* usesDataFrom: when you reuse somehow (and elaborate on) the data in the cited entity
-* usesMethodIn
-* citesAsAuthority
-* citesAsEvidence
-* citesAsPotentialSolution
-* citesAsRecommendedReading
-* citesAsRelated
-* citesAsSourceDocument
-* citesForInformation
-* confirms
-* documents
-* providesDataFor
-* obtainsSupportFrom
-* discusses
-* extends
-* agreesWith
-* disagreesWith
-* updates
-* citation: generic citation
-
+Light weight, relies on existing packages 
 
 # Results
+
+## BiocExecute
+
+`BiocExecute` is a package to make Bioconductor/R package functions executable
+in the Command Line Interface (CLI). 
+
+The package comes with a few functions that need to be called upon building a
+package or upon using the package in the CLI. 
+
+# Usage
+
+## How to use executables
+
+Here's a quick example of how you would call the function `name(x, y)` from
+the package `pkgExample`:
+
+First, the user needs to make sure the package functions are executable:
+
+```{r inst, eval = FALSE}
+BiocExecute::installExecs("pkgExample")
+```
+
+And now call those functions from within the terminal:
+
+```{bash ex, eval = FALSE}
+pkgExample --help
+pkgExample name -x Bilbo -y Baggins
+```
+
+## How to create executables
+
+`BiocExecute` uses `Rapp` to make your package functions executable. In the
+coming sections we will show the different ways `Rapp` includes arguments to be
+called in the CLI. Note that `Rapp` by itself works with scripts in which the
+first line is defined as `#!/usr/bin/env Rapp`. You should **_NOT_** include
+this line in your scripts ! This is handled internally as it is bundled in the
+`BiocExecute` package.
+
+The executables can have many ranges, from a simple function call to an entire
+complex workflow. Note that bigger workflows mean more parameters to call in
+the CLI. 
+
+As a maintainer, you may choose which functions/workflows you decide to include
+in your package. As a package user, we suggest to create pull requests on the
+package GitHub repository for workflows that you believe should be easily 
+accessible. Try and avoid creating strongly personal workflows. Hold priority
+for workflows that are repeatedly used across different user cases.
+
+### Create a script
+
+An _R_ package that has executables should include them in its `exec/scripts/`
+directory. The maintainer of a package should then call
+`BiocExecute::compileExecs()` to create the file `packageName.R` in the `exec/`
+directory.
+
+For instance, the name of my package is `mypkg`. In its root directory, I don't
+have an `exec` directory:
+
+```{r tree, eval = FALSE}
+mypkg
+│   README.md
+│   DESCRIPTION    
+│   NEWS.md
+│   NAMESPACE    
+│
+└───R
+│   │   functionA.R
+│   │   functionB.R
+│   
+└───tests
+│   │   testA.R
+│   │   testB.R
+│   
+└───vignettes
+    │   myVignette.Rmd
+```
+
+To create the necessary files, I use:
+
+```{r createSkeleton, eval = FALSE}
+## From the root directory
+skeletonCli("./")
+```
+
+Now, my directory tree looks like this:
+
+```{r tree2, eval = FALSE}
+mypkg
+│   README.md
+│   DESCRIPTION    
+│   NEWS.md
+│   NAMESPACE    
+│
+└───R
+│   │   functionA.R
+│   │   functionB.R
+│   
+└───exec
+│   │   mypkg.R
+│   │
+│   └───scripts
+│       │   template.R
+│   
+└───tests
+│   │   testA.R
+│   │   testB.R
+│   
+└───vignettes
+    │   myVignette.Rmd
+```
+
+In the `exec` directory, there is a file called `mypkg.R`. This file is built
+by compiling all scripts in `exec/scripts/`. It is this file that is
+executable and should not be edited by hand as it will be overwritten by
+`combineExecs()`.
+
+#### Scripts files
+
+The files in the `exec/scripts/` directory are at the core of the available
+executables. One script correcsponds to one command, which can be a simple
+function or even a whole workflow. These scripts are combined and compiled into
+the main executable file in `exec/` (see section above). 
+
+The script files need to follow the `Rapp` architecture. A template file is
+built by default to get you started. In practice, these _R_ scripts are really
+a repetition of the important functions within your package, except that their
+parameters and documentation are re-written in a way for `Rapp` to parse them.
+
+#### Rapp fields and function parameters
+
+`Rapp` parses _R_ scripts by looking for specific expression patterns at the
+top level. Each pattern maps to a different CLI surface. The table below
+summarises the most common ones:
+
+| R expression | CLI surface |
+|---|---|
+| `foo <- ""` | Option: `app --foo value` |
+| `foo <- NULL` | Positional argument: `app foo-value` |
+| `foo <- TRUE` | Boolean switch: `app --foo` / `app --no-foo` |
+| `foo <- c()` | Repeatable option (raw strings): `app --foo a --foo b` |
+| `foo <- list()` | Repeatable option (parsed values): `app --foo 1 --foo 2` |
+| `switch("", cmd1 = {}, cmd2 = {})` | Subcommands: `app cmd1 --help` |
+
+Annotations are written as YAML hash-pipe comments (`#|`) directly above the
+assignment they document. The most commonly used fields are:
+
+| Field | Description |
+|---|---|
+| `description` | Short description shown in `--help` output |
+| `title` | Title for subcommands |
+| `short` | Single-letter alias (e.g. `short: n` enables `-n`) |
+| `required` | Set to `false` to make a positional argument optional |
+| `val_type` | Expected type: `string`, `integer`, `float`, `bool`, or `any` |
+
+A minimal example script illustrates how these come together:
+
+```r
+#| description: Count word occurrences in a file.
+
+#| description: Path to the input file.
+inputFile <- NULL
+
+#| description: Word to count.
+#| short: w
+word <- ""
+
+#| description: Print each match.
+verbose <- FALSE
+```
+
+Called from the terminal:
+
+```bash
+count-words myfile.txt --word hello --verbose
+count-words --help
+```
+
+For a full description of all available fields and advanced patterns such as
+nested subcommands, refer to the [`Rapp` GitHub
+page](https://github.com/r-lib/Rapp).
 
 
 # Discussion
