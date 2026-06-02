@@ -1,31 +1,7 @@
 ---
 title: 'BiocExecute: Make package functions or workflows executable in the command line'
 title_short: 'BiocExecute'
-tags:
-  - Bioconductor
-  - xx
-authors:
-  - name: Guillaume Deflandre
-    affiliation: 1
-    role: Author, creator
-  - name: Claire Rioualen
-    orcid: https://orcid.org/0000-0002-7684-8679
-    affiliation: 4
-    role: Author
-affiliations:
-  - name: First Affiliation
-    ror: xx
-    index: 1
-  - name: Second affiliation
-    ror: xx
-    index: 2
-  - name: Third affiliation
-    ror: xx
-    index: 3
-  - name: "IFB-core, French Institute of Bioinformatics (IFB), CNRS, INSERM, INRAE, CEA, 94800 Villejuif, France"
-    ror: 045f7pv37
-    index: 4
-date: '`r Sys.Date()`'
+
 cito-bibliography: paper.bib
 event: EuroBioC26
 biohackathon_name: "EuroBioC26 Hackathon"
@@ -156,16 +132,3 @@ Possible CiTO typing annotation include:
 * updates
 * citation: generic citation
 
-
-# Results
-
-
-# Discussion
-
-...
-
-## Acknowledgements
-
-...
-
-## References
