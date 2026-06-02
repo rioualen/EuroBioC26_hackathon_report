@@ -163,6 +163,7 @@ mypkg
 &#124   
 &#9492&#9472&#9472&#9472vignettes
     &#124   myVignette.Rmd
+\\|
 ```
 
 
