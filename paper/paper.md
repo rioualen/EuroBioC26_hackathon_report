@@ -5,15 +5,15 @@ tags:
   - Bioconductor
 authors:
   - name: Guillaume Deflandre
-    orcid: 0000-0000-0000-0000
+    orcid: 0009-0008-1257-2416
     affiliation: 1
     role: Author, creator
   - name: Leopold Guyot 
-    orcid: 0000-0000-0000-0000
+    orcid: 0009-0005-2217-3855
     affiliation: 2
     role: Author
   - name: Rasmus Hindstrom 
-    orcid: 0000-0000-0000-0000
+    orcid: 0009-0004-5731-178X
     affiliation: 3
     role: Author
   - name: Claire Rioualen
