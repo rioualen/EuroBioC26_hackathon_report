@@ -146,30 +146,77 @@ directory.
 For instance, the name of my package is `mypkg`. In its root directory, I don't
 have an `exec` directory:
 
-```r
-0xE2   README.md
-  &#124   DESCRIPTION    
-  &#124   NEWS.md
-  &#124   NAMESPACE    
-  &#124
-  &#9492&#9472&#9472&#9472R
-  &#124   &#124   functionA.R
-  &#124   &#124   functionB.R
-  &#124   
-  &#9492&#9472&#9472&#9472tests
-  &#124   &#124   testA.R
-  &#124   &#124   testB.R
-  &#124   
-  &#9492&#9472&#9472&#9472vignettes
-  &#124   myVignette.Rmd
-```
+> to do
 
 
 #### Script files
 
+
+The files in the `exec/scripts/` directory are at the core of the available
+executables. One script correcsponds to one command, which can be a simple
+function or even a whole workflow. These scripts are combined and compiled into
+the main executable file in `exec/` (see section above). 
+
+The script files need to follow the `Rapp` architecture. A template file is
+built by default to get you started. In practice, these _R_ scripts are really
+a repetition of the important functions within your package, except that their
+parameters and documentation are re-written in a way for `Rapp` to parse them.
+
 #### Rapp fields and function parameters
 
 
+### Rapp fields and function parameters
+
+`Rapp` parses _R_ scripts by looking for specific expression patterns at the
+top level. Each pattern maps to a different CLI surface. The table below
+summarises the most common ones:
+
+| R expression | CLI surface |
+|---|---|
+| `foo <- ""` | Option: `app --foo value` |
+| `foo <- NULL` | Positional argument: `app foo-value` |
+| `foo <- TRUE` | Boolean switch: `app --foo` / `app --no-foo` |
+| `foo <- c()` | Repeatable option (raw strings): `app --foo a --foo b` |
+| `foo <- list()` | Repeatable option (parsed values): `app --foo 1 --foo 2` |
+| `switch("", cmd1 = {}, cmd2 = {})` | Subcommands: `app cmd1 --help` |
+
+Annotations are written as YAML hash-pipe comments (`#|`) directly above the
+assignment they document. The most commonly used fields are:
+
+| Field | Description |
+|---|---|
+| `description` | Short description shown in `--help` output |
+| `title` | Title for subcommands |
+| `short` | Single-letter alias (e.g. `short: n` enables `-n`) |
+| `required` | Set to `false` to make a positional argument optional |
+| `val_type` | Expected type: `string`, `integer`, `float`, `bool`, or `any` |
+
+A minimal example script illustrates how these come together:
+
+```r
+#| description: Count word occurrences in a file.
+
+#| description: Path to the input file.
+inputFile <- NULL
+
+#| description: Word to count.
+#| short: w
+word <- ""
+
+#| description: Print each match.
+verbose <- FALSE
+```
+
+Called from the terminal:
+
+```bash
+count-words myfile.txt --word hello --verbose
+count-words --help
+```
+
+For a full description of all available fields and advanced patterns such as
+nested subcommands, refer to the [`Rapp` GitHub
+page](https://github.com/r-lib/Rapp).
 
 # Data availability
 
