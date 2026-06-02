@@ -15,7 +15,7 @@ authors:
     orcid: 0009-0005-2217-3855
     affiliation: 1
     role: Author
-  - name: Rasmus Hindstrom 
+  - name: Rasmus Hindström 
     orcid: 0009-0004-5731-178X
     affiliation: 2
     role: Author
