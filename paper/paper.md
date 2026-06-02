@@ -1,10 +1,8 @@
 ---
-title: 'BioHackEU23 report: Template for the very long title'
-title_short: 'BioHackEU23 #26: unknown chemical substances'
+title: 'BiocExecute: Make package functions or workflows executable in the command line'
+title_short: 'BiocExecute'
 tags:
-  - cheminformatics
-  - PubChem
-  - unknown chemical substances
+  - Bioconductor
 authors:
   - name: First Author
     affiliation: 1
