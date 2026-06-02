@@ -33,7 +33,7 @@ biohackathon_url:   "https://eurobioc2026.bioconductor.org/"
 biohackathon_location: "Turku, Finland, 2026"
 group: Project 2
 # URL to project git repo --- should contain the actual paper.md:
-git_url: https://github.com/BiocCodingCollaborations/BiocExecute
+git_url: "https://github.com/BiocCodingCollaborations/BiocExecute"
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
 authors_short: Deflandre \emph{et al.}
