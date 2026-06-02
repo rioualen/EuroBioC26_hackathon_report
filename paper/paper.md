@@ -1,57 +1,83 @@
 ---
-title: 'BiocExecute: Make package functions or workflows executable in the command line'
-title_short: 'BiocExecute'
+title: 'BioHackEU23 report: Template for the very long title'
+title_short: 'BioHackEU23 #26: unknown chemical substances'
 tags:
-  - Bioconductor
-  - xx
+  - cheminformatics
+  - PubChem
+  - unknown chemical substances
 authors:
-  - name: Guillaume Deflandre
+  - name: First Author
     affiliation: 1
-    role: Author, creator
-  - name: Claire Rioualen
-    orcid: https://orcid.org/0000-0002-7684-8679
+    role: Writing – original draft
+  - name: Last Author
+    orcid: 0000-0000-0000-0000
     affiliation: 2
-    role: Author
+    role: Conceptualization, Writing – review & editing
 affiliations:
   - name: First Affiliation
     index: 1
-  - name: Second affiliation
+  - name: ELIXIR Europe
+    ror: 044rwnt51
     index: 2
-date: 'xx'
+date: 8 November 2023
 cito-bibliography: paper.bib
-event: EuroBioC26
-biohackathon_name: "EuroBioC26 Hackathon"
-biohackathon_url:   "https://eurobioc2026.bioconductor.org/"
-biohackathon_location: "Turku, Finland, 2026"
-group: Project 2
+event: BH23EU
+biohackathon_name: "BioHackathon Europe 2023"
+biohackathon_url:   "https://biohackathon-europe.org/"
+biohackathon_location: "Barcelona, Spain, 2023"
+group: Project 26
 # URL to project git repo --- should contain the actual paper.md:
-git_url: "https://github.com/BiocCodingCollaborations/BiocExecute"
+git_url: https://github.com/biohackrxiv/publication-template
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
-authors_short: Deflandre \emph{et al.}
+authors_short: First Author \emph{et al.}
 ---
 
-# Abstract
 
 # Introduction
 
-As part of the EuroBioC26 hackathon, we here report...
+As part of the BioHackathon Europe 2023, we here report...
 
+## Meeting information
 
-# Results
+If you want to submit a preprint to BioHackrXiv, first check if your meeting is registered. You can find a list
+of meetings [here](https://index.biohackrxiv.org/meetings). If your meeting is missing, please contact your meeting
+organizers. The above list also provides information on the YAML fields with information about the meeting.
 
+The following fields need to be given:
 
-# Discussion
+```YAML
+biohackathon_name: "BioHackathon Europe 2023"
+biohackathon_url:   "https://biohackathon-europe.org/"
+biohackathon_location: "Barcelona, Spain, 2023"
+group: Project 26
+git_url: https://github.com/yourOrganization/your_report_repo
+```
 
-...
+The [BioHackrXiv meeting pages](https://index.biohackrxiv.org/meetings) provide content to use for the first
+three fields. The `git_url:` field must have the link to the GitHub repository with your preprint (draft).
 
-## Acknowledgements
+## Author information
 
-...
+Information about the authors is given in the [YAML](https://en.wikipedia.org/wiki/YAML) format at the top of this template.
+For authors you provide their names, their affiliations. That is the minimum, but as BioHackrXiv is moving to a situation
+where more metadata is shared, and used by, for example, EuropePMC, adding additional information ie encouraged.
 
-## References
+BioHackathons is about hacking together, and the minimal number of authors for reports is two. This makes a minimal example
+look like this:
 
-## Miscellaneous
+```yaml
+authors:
+  - name: First Author
+    affiliation: 1
+  - name: Last Author
+    affiliation: 2
+affiliations:
+  - name: First Affiliation
+    index: 1
+  - name: ELIXIR Europe
+    index: 2
+```
 
 ### Author identifiers
 
@@ -114,8 +140,64 @@ affiliations:
     index: 2
 ```
 
+# Formatting
 
-### Citation Typing Ontology annotation
+This document use Markdown and you can look at [this tutorial](https://www.markdowntutorial.com/).
+
+## Subsection level 2
+
+Please keep sections to a maximum of only two levels.
+
+## Tables
+
+Tables can be added in the following way, though alternatives are possible:
+
+```markdown
+Table: Note that table caption is automatically numbered and should be
+given before the table itself.
+
+| Header 1 | Header 2 |
+| -------- | -------- |
+| item 1 | item 2 |
+| item 3 | item 4 |
+```
+
+This gives:
+
+Table: Note that table caption is automatically numbered and should be
+given before the table itself.
+
+| Header 1 | Header 2 |
+| -------- | -------- |
+| item 1 | item 2 |
+| item 3 | item 4 |
+
+## Figures
+
+A figure is added with:
+
+```markdown
+![Caption for BioHackrXiv logo figure](./biohackrxiv.png)
+```
+
+This gives:
+
+![Caption for BioHackrXiv logo figure](./biohackrxiv.png)
+
+Figures can be scaled by adding the width or height to the Markdown like this:
+
+```markdown
+![Caption for BioHackrXiv logo figure](./biohackrxiv.png){ width=50px }
+```
+
+# Other main section on your manuscript level 1
+
+Lists can be added with:
+
+1. Item 1
+2. Item 2
+
+# Citation Typing Ontology annotation
 
 You can use [CiTO](http://purl.org/spar/cito/2018-02-12) annotations, as explained in [this BioHackathon Europe 2021 write up](https://raw.githubusercontent.com/biohackrxiv/bhxiv-metadata/main/doc/elixir_biohackathon2021/paper.md) and [this CiTO Pilot](https://www.biomedcentral.com/collections/cito).
 Using this template, you can cite an article and indicate _why_ you cite that article, for instance DisGeNET-RDF [@citesAsAuthority:Queralt2016].
@@ -148,3 +230,16 @@ Possible CiTO typing annotation include:
 * updates
 * citation: generic citation
 
+
+# Results
+
+
+# Discussion
+
+...
+
+## Acknowledgements
+
+...
+
+## References
