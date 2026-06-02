@@ -96,8 +96,6 @@ in the Command Line Interface (CLI).
 The package comes with a few functions that need to be called upon building a
 package or upon using the package in the CLI. 
 
-# Usage
-
 ## How to use executables
 
 Here's a quick example of how you would call the function `name(x, y)` from
@@ -134,4 +132,13 @@ in your package. As a package user, we suggest to create pull requests on the
 package GitHub repository for workflows that you believe should be easily 
 accessible. Try and avoid creating strongly personal workflows. Hold priority
 for workflows that are repeatedly used across different user cases.
+
+### Create a script
+
+
+#### Script files
+
+#### Rapp fields and function parameters
+
+
 
