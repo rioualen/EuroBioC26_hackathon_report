@@ -1,7 +1,16 @@
 ---
 title: 'BiocExecute: Make package functions or workflows executable in the command line'
 title_short: 'BiocExecute'
-
+tags:
+  - Bioconductor
+  - xx
+authors:
+  - name: Guillaume Deflandre
+    affiliation: 1
+affiliations:
+  - name: First Affiliation
+    index: 1
+date: 'June 2nd 2026'
 cito-bibliography: paper.bib
 event: EuroBioC26
 biohackathon_name: "EuroBioC26 Hackathon"
