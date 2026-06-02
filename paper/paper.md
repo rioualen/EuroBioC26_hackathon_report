@@ -146,7 +146,7 @@ directory.
 For instance, the name of my package is `mypkg`. In its root directory, I don't
 have an `exec` directory:
 
-```
+```bash
 mypkg
 │   README.md
 │   DESCRIPTION    
