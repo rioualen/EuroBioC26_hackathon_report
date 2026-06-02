@@ -223,9 +223,8 @@ Your package functions/tools are now available in the CLI !
 
 #### Script files
 
-
 The files in the `exec/scripts/` directory are at the core of the available
-executables. One script correcsponds to one command, which can be a simple
+executables. One script corresponds to one command, which can be a simple
 function or even a whole workflow. These scripts are combined and compiled into
 the main executable file in `exec/` (see section above). 
 
@@ -233,9 +232,6 @@ The script files need to follow the `Rapp` architecture. A template file is
 built by default to get you started. In practice, these _R_ scripts are really
 a repetition of the important functions within your package, except that their
 parameters and documentation are re-written in a way for `Rapp` to parse them.
-
-#### Rapp fields and function parameters
-
 
 ### Rapp fields and function parameters
 
@@ -247,7 +243,7 @@ summarises the most common ones:
 |---|---|
 | `foo <- ""` | Option: `app --foo value` |
 | `foo <- NULL` | Positional argument: `app foo-value` |
-| `foo <- TRUE` | Boolean switch: `app --foo` / `app --no-foo` |
+| `foo <- TRUE` | Boolean switch: `app --foo=true` / `app --foo=true` |
 | `foo <- c()` | Repeatable option (raw strings): `app --foo a --foo b` |
 | `foo <- list()` | Repeatable option (parsed values): `app --foo 1 --foo 2` |
 | `switch("", cmd1 = {}, cmd2 = {})` | Subcommands: `app cmd1 --help` |
@@ -285,6 +281,9 @@ Called from the terminal:
 count-words myfile.txt --word hello --verbose
 count-words --help
 ```
+
+Use `execTemplate()` to create a template script with the different parameters
+to facilitate writing your scripts.
 
 For a full description of all available fields and advanced patterns such as
 nested subcommands, refer to the [`Rapp` GitHub
