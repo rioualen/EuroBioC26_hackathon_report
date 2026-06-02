@@ -94,7 +94,9 @@ Light weight, relies on existing packages
 ## BiocExecute
 
 `BiocExecute` is a package to make Bioconductor/R package functions executable
-in the Command Line Interface (CLI). 
+in the Command Line Interface (CLI) (Figure 1.)
+
+![Hex sticker for the BiocExecute package.](images/hex_sticker.png)
 
 The package comes with a few functions that need to be called upon building a
 package or upon using the package in the CLI. 
@@ -146,7 +148,7 @@ directory.
 For instance, the name of my package is `mypkg`. In its root directory, I don't
 have an `exec` directory:
 
-> to do
+> **to do**
 
 
 #### Script files
@@ -221,6 +223,8 @@ page](https://github.com/r-lib/Rapp).
 # Data availability
 
 All scripts and materials developed during the hackathon are available in the [BiocExecute GitHub repository](https://github.com/BiocCodingCollaborations/BiocExecute).
+
+# Conclusion?
 
 # Acknowledgements
 
