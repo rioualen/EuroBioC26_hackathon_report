@@ -105,13 +105,13 @@ the package `pkgExample`:
 
 First, the user needs to make sure the package functions are executable:
 
-```{r inst, eval = FALSE}
+```r
 BiocExecute::installExecs("pkgExample")
 ```
 
 And now call those functions from within the terminal:
 
-```{bash ex, eval = FALSE}
+```bash
 pkgExample --help
 pkgExample name -x Bilbo -y Baggins
 ```
