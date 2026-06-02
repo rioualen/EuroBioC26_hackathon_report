@@ -57,9 +57,9 @@ There already exist at least two tools that do ‘app’ style script conversion
 
 Key Considerations:
 
-Where is the right place for ‘app-ification’ of a script to take place? Should it happen upon package installation?
-Overhead checking of things like package versions or argument types are mostly cheap, how much of those checks should we enforce?
-What do graceful failures for these scripts look like?
+* Where is the right place for ‘app-ification’ of a script to take place? Should it happen upon package installation?
+* Overhead checking of things like package versions or argument types are mostly cheap, how much of those checks should we enforce?
+* What do graceful failures for these scripts look like?
 
 ## Motivation
 
@@ -138,7 +138,33 @@ for workflows that are repeatedly used across different user cases.
 
 ### Create a script
 
-to fill
+An _R_ package that has executables should include them in its `exec/scripts/`
+directory. The maintainer of a package should then call
+`BiocExecute::execCompile()` to create the file `packageName.R` in the `exec/`
+directory.
+
+For instance, the name of my package is `mypkg`. In its root directory, I don't
+have an `exec` directory:
+
+```r
+mypkg
+│   README.md
+│   DESCRIPTION    
+│   NEWS.md
+│   NAMESPACE    
+│
+└───R
+│   │   functionA.R
+│   │   functionB.R
+│   
+└───tests
+│   │   testA.R
+│   │   testB.R
+│   
+└───vignettes
+    │   myVignette.Rmd
+```
+
 
 #### Script files
 
