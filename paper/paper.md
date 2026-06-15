@@ -144,6 +144,9 @@ folders, scripts and more.
 For instance, suppose the name of my package is `mypkg`. In its root directory,
 I don't have an `exec` nor a `scripts` folder:
 
+```
+&#124;
+```
 
 
 To create the necessary files, I use:
@@ -154,6 +157,7 @@ execSkeleton()
 ```
 
 Now, my directory tree looks like this:
+
 
 
 For now, there is a simple template in the `scripts` folder. The same template
