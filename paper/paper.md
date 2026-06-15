@@ -144,7 +144,7 @@ folders, scripts and more.
 For instance, suppose the name of my package is `mypkg`. In its root directory,
 I don't have an `exec` nor a `scripts` folder:
 
-```
+```bash
 mypkg
 |   README.md
 |   DESCRIPTION    
@@ -165,35 +165,35 @@ mypkg
 
 To create the necessary files, I use:
 
-```{r createSkeleton, eval = FALSE}
+```r
 ## From the root directory
 execSkeleton()
 ```
 
 Now, my directory tree looks like this:
 
-```
+```bash
 mypkg
 │   README.md
 │   DESCRIPTION    
 │   NEWS.md
 │   NAMESPACE    
 │
-└───R
++---R
 │   │   functionA.R
 │   │   functionB.R
 │   
-└───exec
++---exec
 │   │   mypkg.R
 │   │
-│   └───scripts
+│   +---scripts
 │       │   base_template.R
 │   
-└───tests
++---tests
 │   │   testA.R
 │   │   testB.R
 │   
-└───vignettes
++---vignettes
     │   myVignette.Rmd
 ```
 
