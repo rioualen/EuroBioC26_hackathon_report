@@ -36,9 +36,9 @@ affiliations:
 date: '`r Sys.Date()`'
 cito-bibliography: paper.bib
 event: Eurobioc 2026
-biohackathon_name: "Eurobioc 2026"
+biohackathon_name: "EuroBioc 2026 Hackathon, Turku, Finland, 2026"
 biohackathon_url: "https://bioconductor.org/developers/bioccommits/"
-biohackathon_location: "Turku, Finland 2026"
+biohackathon_location: "Turku, Finland"
 group: Project 2
 # URL to project git repo --- should contain the actual paper.md:
 git_url: https://github.com/rioualen/EuroBioC26_hackathon_report
