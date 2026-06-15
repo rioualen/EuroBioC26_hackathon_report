@@ -49,11 +49,19 @@ authors_short: Deflandre \emph{et al.}
 
 # Introduction
 
-## Commandline executables for bioconductor functions and scripts
+## Commandline executables for Bioconductor functions and scripts
 
-This project was originally envisioned as a package or function for converting package maintainer or user supplied scripts into commandline executables. The R and Bioconductor paradigms of interactivity through a responsive and informative REPL have been a formula for success for academic users for a long time. But as computational biology becomes increasingly interdisciplinary and increasingly relies on high performance compute, high throughput compute and experimentation, and cloud compute, formalizing portable and flexible implementations of R and Bioconductor tooling is an imperative to ensure that that work, and Bioconductor itself maintain relevancy.
+This project was originally envisioned as a package or function for converting package maintainer or user supplied scripts into commandline executables. 
+The R and Bioconductor paradigms of interactivity through a responsive and informative REPL have been a formula for success 
+for academic users for a long time. But computational biology has become increasingly interdisciplinary, and increasingly relies 
+on high performance compute, high throughput compute and experimentation, and cloud compute. Formalizing portable and 
+flexible implementations of R and Bioconductor tooling is now an imperative to ensure that that work, and Bioconductor itself, 
+maintain relevancy.
 
-There already exist at least two tools that do ‘app’ style script conversion; R2G2 - Galaxy specifc integration and Rapp - commandline executables. So developing a package for this project may not be necessary. Long term, the goal of this project is to lay the groundwork for programmatic generation of tooling within Bioconductor packages that can be slotted into modern workflow management systems, or other interactive platforms like Galaxy.
+There already exist at least two tools that do ‘app’ style script conversion; R2G2 - Galaxy specifc integration and Rapp - 
+commandline executables. So developing a package for this project may not be necessary. Long term, the goal of this project is 
+to lay the groundwork for programmatic generation of tooling within Bioconductor packages that can be slotted into modern 
+workflow management systems, or other interactive platforms like Galaxy.
 
 Key Considerations:
 
@@ -63,31 +71,20 @@ Key Considerations:
 
 ## Motivation
 
-Bioconductor has a collection of more than 2,400 open source software packages
-downloaded millions of times per year. They are thoroughly maintained and
+Bioconductor has a collection of more than 2,400 open source software packages, totalling about 
+a million package downloads per year. They are thoroughly maintained and
 documented, and their quality is ensured through the use of BiocCheck.
 
 This package aims to further improve Bioconductor software FAIRness, by making
-them usable in the command line.
-
-* Findability: xxx;
-
-* Accessibility: allows more users to use Bioconductor packages, in a wider
-variety of setups;
-
-* Interoperability: packages can be combined as modules with other command line
-tools;
-
-* Reusability: modular components can be reused in future workflows with any
-workflow manager.
+them usable in the command line. It will allow more users to use Bioconductor packages in a wider
+variety of setups; combine packages as modules with other command line
+tools; and reuse modular components in future workflows with any workflow manager.
 
 Package users and developers can both benefit from this setup: users can use
-Bioconductor tools out side of R scripts and integrate them in their own
+Bioconductor tools outside of R scripts and integrate them in their own
 workflows, and package developers can benefit from a wider range of users.
 Overall, Bioconductor software can gain visibility among a larger community of
-bioinformaticiens.
-
-Light weight, relies on existing packages 
+bioinformaticians. 
 
 # Results
 
@@ -103,13 +100,13 @@ package or upon using the package in the CLI.
 
 ## How to use executables
 
-Here's a quick example of how you would call the function `name(x, y)` from
-the package `pkgExample`:
+Here's a quick example of how you would call the tool `name(x, y)` from
+the package `pkgExample` as a package _user_:
 
-First, the user needs to make sure the package functions are executable:
+First, the user needs to make sure the package executables are available:
 
 ```r
-BiocExecute::installExecs("pkgExample")
+BiocExecute::execInstall("pkgExample")
 ```
 
 And now call those functions from within the terminal:
@@ -121,12 +118,12 @@ pkgExample name -x Bilbo -y Baggins
 
 ## How to create executables
 
-`BiocExecute` uses `Rapp` to make your package functions executable. In the
-coming sections we will show the different ways `Rapp` includes arguments to be
-called in the CLI. Note that `Rapp` by itself works with scripts in which the
-first line is defined as `#!/usr/bin/env Rapp`. You should **_NOT_** include
-this line in your scripts ! This is handled internally as it is bundled in the
-`BiocExecute` package.
+`BiocExecute` uses `Rapp` to make your package functions/scripts executable. In
+the coming sections we will show the different ways `Rapp` includes arguments
+to be called in the CLI. Note that `Rapp` by itself works with scripts in which
+the first line is defined as `#!/usr/bin/env Rapp`. You should **_NOT_**
+include this line in your scripts ! This is handled internally as it is bundled
+in the `BiocExecute` package.
 
 The executables can have many ranges, from a simple function call to an entire
 complex workflow. Note that bigger workflows mean more parameters to call in
@@ -141,14 +138,32 @@ for workflows that are repeatedly used across different user cases.
 ### Create a script
 
 An _R_ package that has executables should include them in its `exec/scripts/`
-directory. The maintainer of a package should then call
-`BiocExecute::execCompile()` to create the file `packageName.R` in the `exec/`
-directory.
+directory. `BiocExecute` has all the necessary functions to create these
+folders, scripts and more.
 
-For instance, the name of my package is `mypkg`. In its root directory, I don't
-have an `exec` directory:
+For instance, suppose the name of my package is `mypkg`. In its root directory,
+I don't have an `exec` nor a `scripts` folder:
 
 > **to do**
+
+```bash
+mypkg
+│   README.md
+│   DESCRIPTION    
+│   NEWS.md
+│   NAMESPACE    
+│
+└───R
+│   │   functionA.R
+│   │   functionB.R
+│   
+└───tests
+│   │   testA.R
+│   │   testB.R
+│   
+└───vignettes
+    │   myVignette.Rmd
+```
 
 
 #### Script files
