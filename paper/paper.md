@@ -10,19 +10,19 @@ authors:
   - name: Guillaume Deflandre
     orcid: 0009-0008-1257-2416
     affiliation: 1
-    role: Author, creator
+    role: Hacking, Writing
   - name: Leopold Guyot 
     orcid: 0009-0005-2217-3855
     affiliation: 1
-    role: Author
+    role: Hacking, Writing
   - name: Rasmus Hindström 
     orcid: 0009-0004-5731-178X
     affiliation: 2
-    role: Author
+    role: Hacking, Writing
   - name: Claire Rioualen
     orcid: 0000-0002-7684-8679
     affiliation: 3
-    role: Author
+    role: Hacking, Writing
 affiliations:
   - name: "Computational Biology and Bioinformatics, de Duve Institute, UCLouvain"
     ror: 02495e989
@@ -174,27 +174,27 @@ Now, my directory tree looks like this:
 
 ```
 mypkg
-|   README.md
-|   DESCRIPTION    
-|   NEWS.md
-|   NAMESPACE    
-|
-+---R
-|   |   functionA.R
-|   |   functionB.R
-|   
-+---exec
-|   |   mypkg.R
-|   |
-|   +---scripts
-|       |   base_template.R
-|   
-+---tests
-|   |   testA.R
-|   |   testB.R
-|   
-+---vignettes
-    |   myVignette.Rmd
+│   README.md
+│   DESCRIPTION    
+│   NEWS.md
+│   NAMESPACE    
+│
+└───R
+│   │   functionA.R
+│   │   functionB.R
+│   
+└───exec
+│   │   mypkg.R
+│   │
+│   └───scripts
+│       │   base_template.R
+│   
+└───tests
+│   │   testA.R
+│   │   testB.R
+│   
+└───vignettes
+    │   myVignette.Rmd
 ```
 
 For now, there is a simple template in the `scripts` folder. The same template
@@ -215,27 +215,7 @@ directory):
    make the executables available system-wise (with sudo access), use the
    `destdir` parameter. 
 
-Your package functions/tools are now available in the CLI !
-
-```bash
-mypkg
-│   README.md
-│   DESCRIPTION    
-│   NEWS.md
-│   NAMESPACE    
-│
-└───R
-│   │   functionA.R
-│   │   functionB.R
-│   
-└───tests
-│   │   testA.R
-│   │   testB.R
-│   
-└───vignettes
-    │   myVignette.Rmd
-```
-
+Your package functions/tools are now available in the CLI!
 
 #### Script files
 
@@ -307,12 +287,12 @@ page](https://github.com/r-lib/Rapp).
 
 # Data availability
 
-All scripts and materials developed during the hackathon are available in the [BiocExecute GitHub repository](https://github.com/BiocCodingCollaborations/BiocExecute).
-
-# Conclusion?
+All scripts and materials developed during the hackathon are available in the 
+[BiocExecute GitHub repository](https://github.com/BiocCodingCollaborations/BiocExecute).
 
 # Acknowledgements
 
-This work received state aid managed by the National Research Agency under France 2030 for the French Institute of Bioinformatics (IFB), founded by the Investments for the Future Program, number ANR-11-INBS-0013, as well as for structural research equipment / EQUIPEX+ with reference ANR-21-ESRE-0048.
+This work received state aid managed by the National Research Agency under France 2030 for the French Institute of Bioinformatics (IFB), 
+founded by the Investments for the Future Program, number ANR-11-INBS-0013, 
+as well as for structural research equipment / EQUIPEX+ with reference ANR-21-ESRE-0048.
 
-# References
