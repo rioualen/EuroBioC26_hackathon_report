@@ -177,27 +177,27 @@ Now, my directory tree looks like this:
 
 \begin{verbatim}
 mypkg
-│   README.md
-│   DESCRIPTION    
-│   NEWS.md
-│   NAMESPACE    
-│
+|   README.md
+|   DESCRIPTION    
+|   NEWS.md
+|   NAMESPACE    
+|
 +---R
-│   │   functionA.R
-│   │   functionB.R
-│   
+|   |   functionA.R
+|   |   functionB.R
+|   
 +---exec
-│   │   mypkg.R
-│   │
-│   +---scripts
-│       │   base_template.R
-│   
+|   |   mypkg.R
+|   |
+|   +---scripts
+|       |   base_template.R
+|   
 +---tests
-│   │   testA.R
-│   │   testB.R
-│   
+|   |   testA.R
+|   |   testB.R
+|   
 +---vignettes
-    │   myVignette.Rmd
+    |   myVignette.Rmd
 \end{verbatim}
 
 For now, there is a simple template in the `scripts` folder. The same template
