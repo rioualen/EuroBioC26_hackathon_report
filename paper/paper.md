@@ -144,12 +144,23 @@ folders, scripts and more.
 For instance, suppose the name of my package is `mypkg`. In its root directory,
 I don't have an `exec` nor a `scripts` folder:
 
-```bash
+```
 mypkg
-\|   
+|   README.md
+|   DESCRIPTION    
+|   NEWS.md
+|   NAMESPACE    
+|
++---R
+|   |   functionA.R
+|   |   functionB.R
+|   
++---tests
+|   |   testA.R
+|   |   testB.R
+|   
 +---vignettes
-    \\|   myVignette.Rmd
-    \\\|   myVignette.Rmd
+    |   myVignette.Rmd
 ```
 
 To create the necessary files, I use:
@@ -161,7 +172,30 @@ execSkeleton()
 
 Now, my directory tree looks like this:
 
-
+```
+mypkg
+│   README.md
+│   DESCRIPTION    
+│   NEWS.md
+│   NAMESPACE    
+│
++---R
+│   │   functionA.R
+│   │   functionB.R
+│   
++---exec
+│   │   mypkg.R
+│   │
+│   +---scripts
+│       │   base_template.R
+│   
++---tests
+│   │   testA.R
+│   │   testB.R
+│   
++---vignettes
+    │   myVignette.Rmd
+```
 
 For now, there is a simple template in the `scripts` folder. The same template
 can be created using `execTemplate()`. 
