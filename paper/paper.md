@@ -28,7 +28,7 @@ authors:
     role: Hacking, Writing
 affiliations:
   - name: "Computational Biology and Bioinformatics, de Duve Institute, UCLouvain"
-    ror: 02495e989
+    ror: "02495e989"
     index: 1
   - name: Department of Computing, University of Turku, Turku, Finland
     ror: 05vghhr25
