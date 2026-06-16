@@ -1,6 +1,9 @@
 ---
 title: 'BiocExecute: Make package functions or workflows executable in the command line'
 title_short: 'BiocExecute'
+output:
+  pdf_document:
+    df_print: default
 tags:
   - Bioconductor
   - bioinformatics
