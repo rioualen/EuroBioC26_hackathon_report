@@ -147,7 +147,6 @@ folders, scripts and more.
 For instance, suppose the name of my package is `mypkg`. In its root directory,
 I don't have an `exec` nor a `scripts` folder:
 
-```{=latex}
 \begin{verbatim}
 mypkg
 |   README.md
@@ -166,7 +165,6 @@ mypkg
 +---vignettes
     |   myVignette.Rmd
 \end{verbatim}
-```
 
 To create the necessary files, I use:
 
@@ -177,7 +175,6 @@ execSkeleton()
 
 Now, my directory tree looks like this:
 
-```{=latex}
 \begin{verbatim}
 mypkg
 │   README.md
@@ -202,7 +199,6 @@ mypkg
 +---vignettes
     │   myVignette.Rmd
 \end{verbatim}
-```
 
 For now, there is a simple template in the `scripts` folder. The same template
 can be created using `execTemplate()`. 
