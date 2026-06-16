@@ -144,10 +144,12 @@ folders, scripts and more.
 For instance, suppose the name of my package is `mypkg`. In its root directory,
 I don't have an `exec` nor a `scripts` folder:
 
+```bash
+mypkg
+I
++---vignettes
+    l   myVignette.Rmd
 ```
-&#124;
-```
-
 
 To create the necessary files, I use:
 
