@@ -146,9 +146,10 @@ I don't have an `exec` nor a `scripts` folder:
 
 ```bash
 mypkg
-I
+\|   
 +---vignettes
-    l   myVignette.Rmd
+    \\|   myVignette.Rmd
+    \\\|   myVignette.Rmd
 ```
 
 To create the necessary files, I use:
