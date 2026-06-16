@@ -3,7 +3,7 @@ title: 'BiocExecute: Make package functions or workflows executable in the comma
 title_short: 'BiocExecute'
 output:
   pdf_document:
-    df_print: default
+    fig_caption: yes
 tags:
   - Bioconductor
   - bioinformatics
@@ -147,7 +147,8 @@ folders, scripts and more.
 For instance, suppose the name of my package is `mypkg`. In its root directory,
 I don't have an `exec` nor a `scripts` folder:
 
-```text
+```{=latex}
+\begin{verbatim}
 mypkg
 |   README.md
 |   DESCRIPTION    
@@ -164,6 +165,7 @@ mypkg
 |   
 +---vignettes
     |   myVignette.Rmd
+\end{verbatim}
 ```
 
 To create the necessary files, I use:
@@ -175,7 +177,8 @@ execSkeleton()
 
 Now, my directory tree looks like this:
 
-```text
+```{=latex}
+\begin{verbatim}
 mypkg
 │   README.md
 │   DESCRIPTION    
@@ -198,6 +201,7 @@ mypkg
 │   
 +---vignettes
     │   myVignette.Rmd
+\end{verbatim}
 ```
 
 For now, there is a simple template in the `scripts` folder. The same template
