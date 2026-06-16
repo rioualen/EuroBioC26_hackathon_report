@@ -147,7 +147,7 @@ folders, scripts and more.
 For instance, suppose the name of my package is `mypkg`. In its root directory,
 I don't have an `exec` nor a `scripts` folder:
 
-```{r pkg-structure, eval=FALSE, comment=""}
+```text
 mypkg
 |   README.md
 |   DESCRIPTION    
@@ -175,7 +175,7 @@ execSkeleton()
 
 Now, my directory tree looks like this:
 
-```{r pkg-structure, eval=FALSE, comment=""}
+```text
 mypkg
 │   README.md
 │   DESCRIPTION    
