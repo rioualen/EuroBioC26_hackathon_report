@@ -1,5 +1,5 @@
 ---
-title: 'BiocExecute: Make package functions or workflows executable in the command line'
+title: 'BiocExecute: Make package functions or workflows executable from the command line'
 title_short: 'BiocExecute'
 output:
   pdf_document:
@@ -38,8 +38,8 @@ affiliations:
     index: 3
 date: '`r Sys.Date()`'
 cito-bibliography: paper.bib
-event: Eurobioc 2026
-biohackathon_name: "EuroBioc 2026 Hackathon, Turku, Finland, 2026"
+event: EuroBioC 2026
+biohackathon_name: "EuroBioC 2026 Hackathon, Turku, Finland, 2026"
 biohackathon_url: "https://bioconductor.org/developers/bioccommits/"
 biohackathon_location: "Turku, Finland"
 group: Project 2
@@ -52,49 +52,47 @@ authors_short: Deflandre \emph{et al.}
 
 # Introduction
 
-## Commandline executables for Bioconductor functions and scripts
+Bioconductor [@Huber2015] is a collection of more than 2,400 open-source
+software packages, together accounting for about a million downloads per year
+[@BiocStats]. The
+packages are thoroughly maintained and documented, and their quality is enforced
+through BiocCheck. Their reach, however, largely stops at the R console.
 
-This project was originally envisioned as a package or function for converting package maintainer or user supplied scripts into commandline executables. 
-The R and Bioconductor paradigms of interactivity through a responsive and informative REPL have been a formula for success 
-for academic users for a long time. But computational biology has become increasingly interdisciplinary, and increasingly relies 
-on high performance compute, high throughput compute and experimentation, and cloud compute. Formalizing portable and 
-flexible implementations of R and Bioconductor tooling is now an imperative to ensure that that work, and Bioconductor itself, 
-maintain relevancy.
+The R and Bioconductor paradigm of interactivity through a responsive,
+informative REPL has served academic users well for a long time. But
+computational biology has grown more interdisciplinary, and increasingly runs on
+high-performance and high-throughput compute, large-scale experimentation, and
+the cloud. In these settings analyses are assembled from command-line tools and
+run under workflow managers, where an interactive R session does not fit. For
+Bioconductor and the work built on it to stay relevant, its tooling must be
+portable and scriptable as well as interactive.
 
-There already exist at least two tools that do ‘app’ style script conversion; R2G2 - Galaxy specifc integration and Rapp - 
-commandline executables. So developing a package for this project may not be necessary. Long term, the goal of this project is 
-to lay the groundwork for programmatic generation of tooling within Bioconductor packages that can be slotted into modern 
-workflow management systems, or other interactive platforms like Galaxy.
+Some of this ground is already covered: R2G2 integrates R with Galaxy, and Rapp
+[@Rapp] lets an R script run as if it were a command-line program. What is
+missing is a path from a Bioconductor package to such tools that follows the
+project's own packaging conventions. BiocExecute fills that gap. It is a package that wraps
+Rapp so that the functions and workflows inside any Bioconductor package can be
+called from the command line, with these command-line entry points declared and
+bundled as part of the package itself.
 
-Key Considerations:
+Both users and developers gain from this. Users can run Bioconductor tools
+outside of R scripts, combine them as modules with other command-line tools, and
+reuse them in workflows under any workflow manager; developers reach a wider
+range of users. More broadly, making Bioconductor packages executable improves
+their FAIRness [@Wilkinson2016; @Barker2022] and gives Bioconductor software visibility among
+a larger community of bioinformaticians.
 
-* Where is the right place for ‘app-ification’ of a script to take place? Should it happen upon package installation?
-* Overhead checking of things like package versions or argument types are mostly cheap, how much of those checks should we enforce?
-* What do graceful failures for these scripts look like?
+Longer term, the goal is to lay the groundwork for programmatic generation of
+command-line tooling from within Bioconductor packages, so that this tooling can
+be slotted into modern workflow management systems or interactive platforms such
+as Galaxy [@Galaxy2010].
 
-## Motivation
-
-Bioconductor has a collection of more than 2,400 open source software packages, totalling about 
-a million package downloads per year. They are thoroughly maintained and
-documented, and their quality is ensured through the use of BiocCheck.
-
-This package aims to further improve Bioconductor software FAIRness, by making
-them usable in the command line. It will allow more users to use Bioconductor packages in a wider
-variety of setups; combine packages as modules with other command line
-tools; and reuse modular components in future workflows with any workflow manager.
-
-Package users and developers can both benefit from this setup: users can use
-Bioconductor tools outside of R scripts and integrate them in their own
-workflows, and package developers can benefit from a wider range of users.
-Overall, Bioconductor software can gain visibility among a larger community of
-bioinformaticians. 
-
-# Results
+# Implementation
 
 ## BiocExecute
 
 `BiocExecute` is a package to make Bioconductor/R package functions executable
-in the Command Line Interface (CLI) (Figure 1.)
+in the Command Line Interface (CLI) (Figure 1).
 
 ![Hex sticker for the BiocExecute package.](figures/hex_sticker.png)
 
@@ -124,19 +122,19 @@ pkgExample name -x Bilbo -y Baggins
 `BiocExecute` uses `Rapp` to make your package functions/scripts executable. In
 the coming sections we will show the different ways `Rapp` includes arguments
 to be called in the CLI. Note that `Rapp` by itself works with scripts in which
-the first line is defined as `#!/usr/bin/env Rapp`. You should **_NOT_**
-include this line in your scripts ! This is handled internally as it is bundled
+the first line is defined as `#!/usr/bin/env Rapp`. You should not
+include this line in your scripts; it is handled internally, bundled
 in the `BiocExecute` package.
 
-The executables can have many ranges, from a simple function call to an entire
+The executables can range widely, from a simple function call to an entire
 complex workflow. Note that bigger workflows mean more parameters to call in
 the CLI. 
 
 As a maintainer, you may choose which functions/workflows you decide to include
-in your package. As a package user, we suggest to create pull requests on the
-package GitHub repository for workflows that you believe should be easily 
-accessible. Try and avoid creating strongly personal workflows. Hold priority
-for workflows that are repeatedly used across different user cases.
+in your package. As a package user, we suggest creating pull requests on the
+package GitHub repository for workflows that you believe should be easily
+accessible. Try to avoid creating strongly personal workflows. Prioritize
+workflows that are reused across different use cases.
 
 ### Create a script
 
@@ -145,7 +143,7 @@ directory. `BiocExecute` has all the necessary functions to create these
 folders, scripts and more.
 
 For instance, suppose the name of my package is `mypkg`. In its root directory,
-I don't have an `exec` nor a `scripts` folder:
+I have neither an `exec` nor a `scripts` folder:
 
 \begin{verbatim}
 mypkg
@@ -204,28 +202,28 @@ For now, there is a simple template in the `scripts` folder. The same template
 can be created using `execTemplate()`. 
 
 The maintainer of a package should then create the scripts with functions or
-workflows that he/she wishes to make executable on the CLI.
+workflows that they wish to make executable on the CLI.
 
-Once the `exec/scripts/` are created, you should (in order from the root
+Once the `exec/scripts/` directory is created, you should (in order from the root
 directory):
 
 1. Call `execCompile()` to build the actual executable script. This file will
    be called by its package name and it will be written in the `exec` folder.
-   Do not edit this file by hand, it is likely to be overwritten.
+   Do not edit this file by hand, as it is likely to be overwritten.
 2. Call `devtools::install()` to re-install the package with the executables.
 3. Call `execInstall("mypkg")` or a vector of packages to make the executables
    available in the CLI. To remove those, call `execUninstall("mypkg")`. To
-   make the executables available system-wise (with sudo access), use the
+   make the executables available system-wide (with sudo access), use the
    `destdir` parameter. 
 
 Your package functions/tools are now available in the CLI!
 
-#### Script files
+### Script files
 
 The files in the `exec/scripts/` directory are at the core of the available
 executables. One script corresponds to one command, which can be a simple
-function or even a whole workflow. These scripts are combined and compiled into
-the main executable file in `exec/` (see section above). 
+function or even a whole workflow. These scripts are combined into
+the main executable script in `exec/` (see section above). 
 
 The script files need to follow the `Rapp` architecture. A template file is
 built by default to get you started. In practice, these _R_ scripts are really
@@ -288,6 +286,25 @@ For a full description of all available fields and advanced patterns such as
 nested subcommands, refer to the [`Rapp` GitHub
 page](https://github.com/r-lib/Rapp).
 
+# Conclusion
+
+BiocExecute exposes the functions and workflows of a Bioconductor package as
+command-line tools, bundled and installed as part of the package itself. A
+maintainer writes the commands as Rapp scripts under `exec/scripts/`, combines
+them into a single entry point, and installs it; users then call the tools
+directly from the terminal and drop them into any workflow. This brings
+interactive Bioconductor tools into the scriptable, command-line environment
+that high-throughput and cloud analyses are built on, without asking developers
+to maintain a separate codebase.
+
+Several design questions remain open. Where app-ification should happen, whether
+at package build time, at installation, or on demand, is not yet settled.
+Neither is how much validation, such as package-version and argument-type
+checking, the executables should enforce by default, given the trade-off between
+safety and overhead. A third question is how these tools should fail gracefully,
+with informative messages rather than R tracebacks. Answering them is the next
+step toward programmatic generation of command-line tooling across Bioconductor.
+
 # Data availability
 
 All scripts and materials developed during the hackathon are available in the 
@@ -296,6 +313,6 @@ All scripts and materials developed during the hackathon are available in the
 # Acknowledgements
 
 This work received state aid managed by the National Research Agency under France 2030 for the French Institute of Bioinformatics (IFB), 
-founded by the Investments for the Future Program, number ANR-11-INBS-0013, 
+funded by the Investments for the Future Program, number ANR-11-INBS-0013, 
 as well as for structural research equipment / EQUIPEX+ with reference ANR-21-ESRE-0048.
 
