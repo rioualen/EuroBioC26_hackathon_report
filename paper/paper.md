@@ -312,6 +312,7 @@ All scripts and materials developed during the hackathon are available in the
 
 # Acknowledgements
 
+CR acknowledges the ELIXIR Europe infrastructure for benefitting from a Travel Grant.
 This work received state aid managed by the National Research Agency under France 2030 for the French Institute of Bioinformatics (IFB), 
 funded by the Investments for the Future Program, number ANR-11-INBS-0013, 
 as well as for structural research equipment / EQUIPEX+ with reference ANR-21-ESRE-0048.
